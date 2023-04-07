@@ -17,22 +17,7 @@
             </div>
             <div class="buttons">
                 <button id="startTime">Start</button>
-                <script>
-                    var startBtn = document.getElementById('startTime')
-                    var msec = document.getElementById('msec')
-                    var i = 0
-                    startBtn.onclick = () => {
-                        setInterval(() => {
-                            msec.innerText = i++
-                        }, 10)
-                    }
-                    if (msec >= 100) {
-                        msec = 0
-                        setInterval(() => {
-                            msec.innerText = i++
-                        }, 10)
-                    }
-                </script>
+                <script src="index.js"></script>
                 <button id="stopTime">Stop</button>
                 <button id="resetTime">Reset</button>
             </div>
