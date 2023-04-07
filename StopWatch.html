@@ -15,9 +15,27 @@
             <div class="timerDisplay">
                 <span id="hours">00</span> : <span id="minutes">00</span> : <span id="seconds">00</span> : <span id="msec">00</span>
             </div>
-            <button id="startTime">Start</button>
-            <button id="stopTime">Stop</button>
-            <button id="resetTime">Reset</button>
+            <div class="buttons">
+                <button id="startTime">Start</button>
+                <script>
+                    var startBtn = document.getElementById('startTime')
+                    var msec = document.getElementById('msec')
+                    var i = 0
+                    startBtn.onclick = () => {
+                        setInterval(() => {
+                            msec.innerText = i++
+                        }, 10)
+                    }
+                    if (msec >= 100) {
+                        msec = 0
+                        setInterval(() => {
+                            msec.innerText = i++
+                        }, 10)
+                    }
+                </script>
+                <button id="stopTime">Stop</button>
+                <button id="resetTime">Reset</button>
+            </div>
         </div>
         <script src="index.js"></script>
     </div>

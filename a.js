@@ -27,9 +27,9 @@ function updateTime() {
     elapsedTime = Date.now() - starTime
 
     msecs = Math.floor((elapsedTime / 1000) % 60)
-    secs = Math.floor((elapsedTime / 1000 * 60) % 60)
-    mins = Math.floor((elapsedTime / 1000 * 60 * 60) % 60)
-    hours = Math.floor((elapsedTime / 1000 * 60 * 60 * 60) % 60)
+    secs = Math.floor((elapsedTime / (1000 * 60) % 60))
+    mins = Math.floor((elapsedTime / (1000 * 60 * 60) % 60))
+    hours = Math.floor((elapsedTime / (1000 * 60 * 60 * 60) % 60))
 
     timeDisplay.textContent = `${hours}: ${mins}: ${secs} : ${msecs}`;
 
