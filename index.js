@@ -23,7 +23,7 @@ startBtn.onclick = () => {
         if (msecCount >= 10) {
             msec.innerText = msecCount++
         }
-        if (msecCount > 98) {
+        if (msecCount == 100) {
             msecCount = 0
 
             // Sec to Min
@@ -33,18 +33,18 @@ startBtn.onclick = () => {
             if (secCount >= 10) {
                 sec.innerText = secCount++
             }
-            if (secCount > 59) {
+            if (secCount == 60) {
                 secCount = 0
                 min.innerText = minCount++
 
-            // Min to Hrs
+                // Min to Hrs
                 if (minCount < 10) {
                     min.innerText = "0" + minCount++
                 }
                 if (minCount >= 10) {
                     min.innerText = minCount++
                 }
-                if (minCount > 59) {
+                if (minCount == 60) {
                     minCount = 0
                     hrs.innerText = hrsCount++
                 }
@@ -54,7 +54,15 @@ startBtn.onclick = () => {
 }
 
 stopBtn.onclick = () => {
+    clearInterval()
+}
+
+resetBtn.onclick = () => {
+
     setInterval(() => {
-        clearInterval(Interval)
-    })
+        msec.innerText = "00"
+        sec.innerText = "00"
+        min.innerText = "00"
+        hrs.innerText = "00"
+    },1)
 }
