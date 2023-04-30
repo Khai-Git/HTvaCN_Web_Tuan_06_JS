@@ -70,7 +70,7 @@ function start() {
 
 startBtn.onclick =  function () {
     clearInterval(Interval)
-    Interval = setInterval(start,1)
+    Interval = setInterval(start,10)
 }
 
 stopBtn.onclick = function () {
