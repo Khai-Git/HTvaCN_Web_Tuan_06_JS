@@ -23,19 +23,21 @@ function start() {
     if (msecCount >= 10) {
         msec.innerText = msecCount
     }
-    if (msecCount == 99) {
+    if (msecCount > 99) {
         msecCount = 0
+        msec.innerText = "0" + msecCount
 
         // Sec to Min
         secCount++
         if (secCount < 10) { 
             sec.innerText = "0" + secCount
         }
-        if (secCount >= 10) {
+        if (secCount >= 10 && secCount <= 59) {
             sec.innerText = secCount
         }
         if (secCount > 59) {
             secCount = 0
+            sec.innerText = "0" + secCount
 
             // Min to Hrs
             minCount++ 
@@ -47,6 +49,7 @@ function start() {
             }
             if (minCount > 59) {
                 minCount = 0
+                min.innerText = "0" + minCount
 
                 //Hrs count
                 hrsCount
@@ -67,7 +70,7 @@ function start() {
 
 startBtn.onclick =  function () {
     clearInterval(Interval)
-    Interval = setInterval(start,10)
+    Interval = setInterval(start,1)
 }
 
 stopBtn.onclick = function () {
